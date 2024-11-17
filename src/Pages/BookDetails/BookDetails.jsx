@@ -29,17 +29,20 @@ const BookDetails = () => {
                     <img src={bookDetails.image} alt={bookDetails.bookName} width={500} height={500} />
                 </div>
                 <div>
-                    <h1>{bookDetails.bookName}</h1>
-                    <p>{bookDetails.author}</p>
-                    <span>{bookDetails.category}</span>
-                    <p><span>Review: </span>{bookDetails.review}</p>
-                    <p className="flex gap-20"> Tag: <span className="flex gap-10">{
-                        bookDetails.tags ? bookDetails.tags.map((tag, idx) => <p key={idx}>#{tag}</p>) : <p>Loading....</p>
+                    <h1 className="text-[#131313] font-bold text-4xl font-serif mb-5">{bookDetails.bookName}</h1>
+                    <p className="text-base text-[#767575] font-medium mb-5">By: {bookDetails.author}</p>
+                    <hr className="mb-5"/>
+                    <span className="font-sans text-xl font-medium text-[#131313]">{bookDetails.category}</span>
+                    <hr className="mt-5"/>
+                    <p className="mt-5 text-[#767575] text-base font-thin mb-5"><span className="font-bold font-sans text-base text-[#131313] mr-2">Review: </span>{bookDetails.review}</p>
+                    <p className="flex gap-20 text-base font-bold mb-5"> Tag: <span className="flex gap-10">{
+                        bookDetails.tags ? bookDetails.tags.map((tag, idx) => <p key={idx} className="text-[#23BE0A] cursor-pointer font-medium hover:underline">#{tag}</p>) : <p>Loading....</p>
                     }</span></p>
-                    <p>Number of Pages: {bookDetails.totalPages}</p>
-                    <p>Publisher: {bookDetails.publisher}</p>
-                    <p>Year of Publishing: {bookDetails.yearOfPublishing}</p>
-                    <p>Ratings: {bookDetails.rating}</p>
+                    <hr />
+                    <p className="mt-5 text-[#767575] text-base font-normal">Number of Pages: <span className="font-semibold text-[#131313]">{bookDetails.totalPages}</span></p>
+                    <p className="mt-5 text-[#767575] text-base font-normal">Publisher: <span className="font-semibold text-[#131313]">{bookDetails.publisher}</span></p>
+                    <p className="mt-5 text-[#767575] text-base font-normal">Year of Publishing: <span className="font-semibold text-[#131313]">{bookDetails.yearOfPublishing}</span></p>
+                    <p className="mt-5 text-[#767575] text-base font-normal">Rating: <span className="font-semibold text-[#131313]">{bookDetails.rating}</span></p>
 
 
                 </div>
