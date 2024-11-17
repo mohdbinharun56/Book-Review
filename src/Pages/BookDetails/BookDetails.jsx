@@ -24,8 +24,8 @@ const BookDetails = () => {
     return (
         <div>
             {/* <h1>Book Details: {bookDetails.author}</h1> */}
-            <div className="mt-20 mb-10 flex gap-20">
-                <div className="bg-base-200 p-20 w-1/3 rounded-lg shadow-xl">
+            <div className="mt-20 mb-10 flex flex-col mx-auto w-fit md:flex-row gap-20">
+                <div className="lg:bg-base-200 lg:p-20 lg:w-1/3 lg:rounded-lg lg:shadow-xl">
                     <img src={bookDetails.image} alt={bookDetails.bookName} width={500} height={500} />
                 </div>
                 <div>
