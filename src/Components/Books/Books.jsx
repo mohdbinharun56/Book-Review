@@ -8,7 +8,7 @@ const Books = () => {
         fetch('./books.json')
         .then(response=>response.json())
         .then(data=>setBooks(data))
-    },[])
+    },[]);
     return (
         <div className="mt-20 font-bold text-5xl">
             <h1 className="text-center">Books</h1>
