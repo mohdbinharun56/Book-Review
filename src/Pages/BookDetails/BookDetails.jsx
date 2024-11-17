@@ -1,7 +1,9 @@
 // import { faBookSkull } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
+import { getList, setList } from "../../../public/utilities";
 
 const BookDetails = () => {
     const [bookDetails, setBookDetails] = useState({});
@@ -20,6 +22,32 @@ const BookDetails = () => {
             .catch(error => console.log(error));
 
     }, [bookIdInt]);
+
+    const alertNotifyRead = (key,id) => {
+        const getBooksWishlist = getList("Wishlist");
+        const exist = getBooksWishlist.includes(id);
+        if(exist){
+            toast("You are added this book into the Wishlist!");
+        }else{
+            setList(key,id);
+            toast("Read Successfully.");
+        }
+        // const getBooksList = getList(key);
+        // console.log(getBooksList);
+    }
+    const alertNotifyWishlist = (key,id) => {
+        const getBooksList = getList("Read");
+        // console.log("read books",getBooksList);
+        const exist = getBooksList.includes(id);
+        // console.log(exist);
+        if(exist){
+            toast("You are already Read this book");
+        }else{
+            setList(key,id);
+            toast("Added book to Wishlist.");
+        }
+        // console.log(key,id);
+    }
 
     return (
         <div>
@@ -44,7 +72,10 @@ const BookDetails = () => {
                     <p className="mt-5 text-[#767575] text-base font-normal">Year of Publishing: <span className="font-semibold text-[#131313]">{bookDetails.yearOfPublishing}</span></p>
                     <p className="mt-5 text-[#767575] text-base font-normal">Rating: <span className="font-semibold text-[#131313]">{bookDetails.rating}</span></p>
 
-
+                    <div className="mt-10">
+                        <Link onClick={()=>alertNotifyRead("Read",bookIdInt)} className="px-7 py-4 border border-[#757676] rounded-md mr-3">Read</Link>
+                        <Link onClick={()=>alertNotifyWishlist("Wishlist",bookIdInt)} className="bg-[#50B1C9] text-white font-bold text-base px-7 py-4 border border-[#50B1C9] rounded-md mr-3">Wishlist</Link>
+                    </div>
                 </div>
             </div>
         </div>
