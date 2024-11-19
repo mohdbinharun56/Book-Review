@@ -12,7 +12,7 @@ const BookDetails = () => {
     // console.log(typeof bookId,typeof bookIdInt);
 
     useEffect(() => {
-        fetch('/books.json')
+        fetch('/books.json') // fetch all books from books.json
             .then(res => res.json())
             .then(data => {
                 const detailsBook = data.find(book => book.bookId === bookIdInt);
@@ -24,10 +24,16 @@ const BookDetails = () => {
     }, [bookIdInt]);
 
     const alertNotifyRead = (key, id) => {
+        const readList = getList(key);
+        const isExistReadList = readList.includes(id);
+
         const getBooksWishlist = getList("Wishlist");
         const exist = getBooksWishlist.includes(id);
         if (exist) {
             toast("its already been added into Wishlist and this Book will not be added to the Read list.");
+        }
+        else if(isExistReadList){
+            toast('This Book is already added in the Read list');
         } else {
             setList(key, id);
             toast("Read Successfully.");
@@ -36,12 +42,16 @@ const BookDetails = () => {
         // console.log(getBooksList);
     }
     const alertNotifyWishlist = (key, id) => {
+        const wishlist = getList(key);
+        const isExistWishlist = wishlist.includes(id);
         const getBooksList = getList("Read");
         // console.log("read books",getBooksList);
         const exist = getBooksList.includes(id);
         // console.log(exist);
         if (exist) {
             toast("its already been added into Read list and this Book will not be added to the Wishlist.");
+        }else if(isExistWishlist){
+            toast('This Book is already added in the Wishlist')
         } else {
             setList(key, id);
             toast("Added book to Wishlist.");

@@ -12,7 +12,7 @@ const ListedBooks = () => {
     const clickRead = useRef();
     useEffect(()=>{
         clickRead.current.click();
-    },[])
+    },[]);
 
     useEffect(()=>{
         setBooksData(data);
