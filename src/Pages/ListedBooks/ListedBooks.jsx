@@ -7,7 +7,7 @@ const ListedBooks = () => {
     const [listBooks, setListBooks] = useState([]);
     const [booksData, setBooksData] = useState([]);
     const [books, setBooks] = useState([]);
-        
+    
     const data = useLoaderData();
     const clickRead = useRef();
     useEffect(()=>{

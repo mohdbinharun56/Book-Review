@@ -25,7 +25,7 @@ const Header = () => {
                         className="menu menu-sm dropdown-content  rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li><NavLink className="mt-2" to="/">Home</NavLink></li>
                         <li><NavLink className="mt-2" to="/listedbooks">Listed Books</NavLink></li>
-                        <li><NavLink className="mt-2" to="/pagestoread">Pages to Read</NavLink></li>
+                        <li><NavLink className="mt-2" to="/pagestoread-analysis">Pages to Read</NavLink></li>
                     </ul>
                 </div>
                 <Link to="/" className="btn btn-ghost text-3xl">Book Vibe</Link>
@@ -34,7 +34,7 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><NavLink className="bg-white mr-3" to="/">Home</NavLink></li>
                     <li><NavLink className="bg-white mr-3" to="/listedbooks">Listed Books</NavLink></li>
-                    <li><NavLink className="bg-white mr-3" to="/pagestoread">Pages to Read</NavLink></li>
+                    <li><NavLink className="bg-white mr-3" to="/pagestoread-analysis">Pages to Read</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">

@@ -6,6 +6,8 @@ import Root from './App.jsx'
 import Home from './Pages/Home.jsx'
 import BookDetails from './Pages/BookDetails/BookDetails.jsx'
 import ListedBooks from './Pages/ListedBooks/ListedBooks.jsx'
+import PagesToRead from './Pages/PagesTORead/PagesToRead.jsx'
+import ErrorHandle from './Pages/ErrorHandle/ErrorHandle.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,8 +27,13 @@ const router = createBrowserRouter([
         path: '/listedbooks',
         loader: ()=>fetch('/books.json'),
         element: <ListedBooks></ListedBooks>,
+      },
+      {
+        path: '/pagestoread-analysis',
+        element: <PagesToRead></PagesToRead>
       }
-    ]
+    ],
+    errorElement: <ErrorHandle></ErrorHandle>
   }
 ])
 createRoot(document.getElementById('root')).render(
