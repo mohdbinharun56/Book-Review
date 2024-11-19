@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Book from "../Book/Book";
+import { toast } from "react-toastify";
 
 const Books = () => {
     const [books,setBooks] = useState([]);
@@ -8,6 +9,7 @@ const Books = () => {
         fetch('./books.json')
         .then(response=>response.json())
         .then(data=>setBooks(data))
+        .catch(error => toast(error));
     },[]);
     return (
         <div className="mt-20 font-bold text-5xl">

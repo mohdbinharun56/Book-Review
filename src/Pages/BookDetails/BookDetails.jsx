@@ -19,31 +19,31 @@ const BookDetails = () => {
                 // console.log(detailsBook);
                 setBookDetails(detailsBook);
             })
-            .catch(error => console.log(error));
+            .catch(error => toast(error));
 
     }, [bookIdInt]);
 
-    const alertNotifyRead = (key,id) => {
+    const alertNotifyRead = (key, id) => {
         const getBooksWishlist = getList("Wishlist");
         const exist = getBooksWishlist.includes(id);
-        if(exist){
-            toast("You are added this book into the Wishlist!");
-        }else{
-            setList(key,id);
+        if (exist) {
+            toast("its already been added into Wishlist and this Book will not be added to the Read list.");
+        } else {
+            setList(key, id);
             toast("Read Successfully.");
         }
         // const getBooksList = getList(key);
         // console.log(getBooksList);
     }
-    const alertNotifyWishlist = (key,id) => {
+    const alertNotifyWishlist = (key, id) => {
         const getBooksList = getList("Read");
         // console.log("read books",getBooksList);
         const exist = getBooksList.includes(id);
         // console.log(exist);
-        if(exist){
-            toast("You are already Read this book");
-        }else{
-            setList(key,id);
+        if (exist) {
+            toast("its already been added into Read list and this Book will not be added to the Wishlist.");
+        } else {
+            setList(key, id);
             toast("Added book to Wishlist.");
         }
         // console.log(key,id);
@@ -59,9 +59,9 @@ const BookDetails = () => {
                 <div>
                     <h1 className="text-[#131313] font-bold text-4xl font-serif mb-5">{bookDetails.bookName}</h1>
                     <p className="text-base text-[#767575] font-medium mb-5">By: {bookDetails.author}</p>
-                    <hr className="mb-5"/>
+                    <hr className="mb-5" />
                     <span className="font-sans text-xl font-medium text-[#131313]">{bookDetails.category}</span>
-                    <hr className="mt-5"/>
+                    <hr className="mt-5" />
                     <p className="mt-5 text-[#767575] text-base font-thin mb-5"><span className="font-bold font-sans text-base text-[#131313] mr-2">Review: </span>{bookDetails.review}</p>
                     <p className="flex gap-20 text-base font-bold mb-5"> Tag: <span className="flex gap-10">{
                         bookDetails.tags ? bookDetails.tags.map((tag, idx) => <p key={idx} className="text-[#23BE0A] cursor-pointer font-medium hover:underline">#{tag}</p>) : <p>Loading....</p>
@@ -73,8 +73,8 @@ const BookDetails = () => {
                     <p className="mt-5 text-[#767575] text-base font-normal">Rating: <span className="font-semibold text-[#131313]">{bookDetails.rating}</span></p>
 
                     <div className="mt-10">
-                        <Link onClick={()=>alertNotifyRead("Read",bookIdInt)} className="px-7 py-4 border border-[#757676] rounded-md mr-3">Read</Link>
-                        <Link onClick={()=>alertNotifyWishlist("Wishlist",bookIdInt)} className="bg-[#50B1C9] text-white font-bold text-base px-7 py-4 border border-[#50B1C9] rounded-md mr-3">Wishlist</Link>
+                        <Link onClick={() => alertNotifyRead("Read", bookIdInt)} className="px-7 py-4 border border-[#757676] rounded-md mr-3">Read</Link>
+                        <Link onClick={() => alertNotifyWishlist("Wishlist", bookIdInt)} className="bg-[#50B1C9] text-white font-bold text-base px-7 py-4 border border-[#50B1C9] rounded-md mr-3">Wishlist</Link>
                     </div>
                 </div>
             </div>
