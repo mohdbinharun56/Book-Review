@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const BooksList = ({ book }) => {
     const {bookId, image, bookName, author, category, tags, totalPages, publisher, yearOfPublishing, rating } = book;
     console.log(book);
-
     return (
         <>
             <div className="flex flex-col md:flex-row gap-10 my-10 border-2 border-gray-400 p-10 rounded-xl shadow shadow-gray-400">

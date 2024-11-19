@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getList } from "../../../public/utilities";
 import { useLoaderData } from "react-router-dom";
 import BooksList from "../../Components/BooksList/BooksList";
@@ -9,7 +9,11 @@ const ListedBooks = () => {
     const [books, setBooks] = useState([]);
         
     const data = useLoaderData();
-    
+    const clickRead = useRef();
+    useEffect(()=>{
+        clickRead.current.click();
+    },[])
+
     useEffect(()=>{
         setBooksData(data);
     },[data]);
@@ -55,7 +59,7 @@ const ListedBooks = () => {
             </div>
 
             <div className="border-b">
-                <button onClick={() => handleList("Read")} className="mr-2 border p-2">Read Bookd</button>
+                <button ref={clickRead} onClick={() => handleList("Read")} className="mr-2 border p-2">Read Bookd</button>
                 <button onClick={() => handleList("Wishlist")} className="mr-2 border p-2">Wishlist</button>
             </div>
 
