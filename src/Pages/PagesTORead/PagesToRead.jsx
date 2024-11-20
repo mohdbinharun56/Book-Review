@@ -21,10 +21,10 @@ const PagesToRead = () => {
     }, [data]);
     console.log(listofReadBooks);
     return (
-        <div className="flex justify-center mt-40">
+        <div className="my-40 bg-base-200 w-fit mx-auto p-5 rounded-md">
             {
                 listofReadBooks.length > 0 ? <div>
-                    <BarChart width={800} height={400} data={listofReadBooks}>
+                    <BarChart data={listofReadBooks} width={400} height={300}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="bookName" />
                         <YAxis />

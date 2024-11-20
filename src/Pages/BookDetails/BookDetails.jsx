@@ -63,9 +63,9 @@ const BookDetails = () => {
             {/* <h1>Book Details: {bookDetails.author}</h1> */}
             <div className="mt-20 mb-10 flex flex-col mx-auto w-fit md:flex-row gap-20">
                 <div className="lg:bg-base-200 lg:p-20 lg:w-1/3 lg:rounded-lg lg:shadow-xl">
-                    <img src={bookDetails.image} alt={bookDetails.bookName} width={500} height={500} />
+                    <img src={bookDetails.image} alt={bookDetails.bookName} className="w-80 h-80 md:w-[500px] mx-auto"/>
                 </div>
-                <div>
+                <div className="mx-10 md:mx-0">
                     <h1 className="text-[#131313] font-bold text-4xl font-serif mb-5">{bookDetails.bookName}</h1>
                     <p className="text-base text-[#767575] font-medium mb-5">By: {bookDetails.author}</p>
                     <hr className="mb-5" />
