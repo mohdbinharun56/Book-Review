@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/pagestoread-analysis',
+        loader: ()=>fetch('/books.json'),
         element: <PagesToRead></PagesToRead>
       }
     ],
