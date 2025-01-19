@@ -1,7 +1,7 @@
 # Book Reviewer
 
 ### Live Site URL
-[Visit the Website](https://example-live-site-url.com)
+[Visit the Website-Book Reviewer](https://book-review-sites.netlify.app/)
 
 ---
 
