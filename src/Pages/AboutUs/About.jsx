@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const About = () => {
     return (
         <div>
@@ -34,6 +36,9 @@ const About = () => {
                         <li>Example: Founded by a group of avid readers and tech enthusiasts, our team is dedicated to delivering the best user experience.</li>
                     </ul>
                 </p>
+            </div>
+            <div className="mb-5">
+                <NavLink  to='/contact' className="text-green-500 border transition duration-500 text-xl p-2 hover:border-green-500 hover:scale-105 ">Contact!</NavLink>
             </div>
         </div>
 
