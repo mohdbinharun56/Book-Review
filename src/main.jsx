@@ -9,6 +9,7 @@ import ListedBooks from './Pages/ListedBooks/ListedBooks.jsx'
 import PagesToRead from './Pages/PagesTORead/PagesToRead.jsx'
 import ErrorHandle from './Pages/ErrorHandle/ErrorHandle.jsx'
 import About from './Pages/AboutUs/About.jsx'
+import Contact from './Pages/Contact/Contact.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/about-us',
         element: <About></About>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
       }
     ],
     errorElement: <ErrorHandle></ErrorHandle>

@@ -27,6 +27,7 @@ const Header = () => {
                         <li><NavLink className="mt-2" to="/listedbooks">Listed Books</NavLink></li>
                         <li><NavLink className="mt-2" to="/pagestoread-analysis">Pages to Read</NavLink></li>
                         <li><NavLink className="mt-2" to="/about-us">About Us</NavLink></li>
+                        <li><NavLink className="mt-2" to="/contact">Contact</NavLink></li>
                     </ul>
                 </div>
                 <Link to="/" className="btn btn-ghost text-3xl">Book Vibe</Link>
@@ -37,6 +38,7 @@ const Header = () => {
                     <li><NavLink className="bg-white mr-3" to="/listedbooks">Listed Books</NavLink></li>
                     <li><NavLink className="bg-white mr-3" to="/pagestoread-analysis">Pages to Read</NavLink></li>
                     <li><NavLink className="bg-white mr-3" to="/about-us">About Us</NavLink></li>
+                    <li><NavLink className="bg-white mr-3" to="/contact">Contact</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
