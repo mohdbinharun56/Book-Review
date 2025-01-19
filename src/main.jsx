@@ -8,6 +8,7 @@ import BookDetails from './Pages/BookDetails/BookDetails.jsx'
 import ListedBooks from './Pages/ListedBooks/ListedBooks.jsx'
 import PagesToRead from './Pages/PagesTORead/PagesToRead.jsx'
 import ErrorHandle from './Pages/ErrorHandle/ErrorHandle.jsx'
+import About from './Pages/AboutUs/About.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         path: '/pagestoread-analysis',
         loader: ()=>fetch('/books.json'),
         element: <PagesToRead></PagesToRead>
+      },
+      {
+        path: '/about-us',
+        element: <About></About>
       }
     ],
     errorElement: <ErrorHandle></ErrorHandle>

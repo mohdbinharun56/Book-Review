@@ -25,6 +25,7 @@ const ListedBooks = () => {
     }, [booksData, listBooks]);
 
     const handleList = (key) => {
+
         if (key === "Read") {
             const getSaveBooks = getList(key);
             if (getSaveBooks.length > 0) {
